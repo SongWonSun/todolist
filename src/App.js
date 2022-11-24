@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+
 // import React from 'react';
 import './App.css';
-import {Fnc1, Fnc2} from './FncCom';
+import React, {Component} from 'react';
+import { Nav } from 'bootstrap-4-react';
+// import {Fnc1, Fnc2} from './FncCom';
 // import abb from './Test';
 // import {ha} from './Test';
 // import {Abc,DevItem} from './Test';
-// import roomhaha from './img/room.jpg';
+import {Img,Img2} from './component/body';
 // import $ from 'jquery';
 
 // // 함수형 컴포넌트 App
@@ -285,23 +287,44 @@ import {Fnc1, Fnc2} from './FncCom';
 //   );
 // }
 
-function App(){
-  return (
-    <div className="App">
-      <div className="black-nav">
-        <div>외부파일 참조하기</div>
-      </div><br />
-      <SubApp />
-      <Fnc1 />
-      <Fnc2 />
-    </div>
-  );
-}
+// function App(){
+//   return (
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>외부파일 참조하기</div>
+//       </div><br />
+//       <SubApp />
+//       <Fnc1 />
+//       <Fnc2 />
+//     </div>
+//   );
+// }
 function SubApp(){
   return(
     <div>추가한 함수형 컴포넌트</div>
   );
 }
+
+/* 함수형 컴포넌트에서는 리액트에서 지원하는 기능 중 state, lifeCycle등의 기능ㄴ등을 사용할 수없다. 
+  state는 react hook를 이용할 경우는 함수형 컴포넌트에서도 state이용이 가능하다. */
+
+class App extends Component{
+  render(){
+    return (
+      <><Nav style={{background: '#000'}}>
+        <Nav.Item>
+          <Nav.Link active href="http://www.naver.com">메뉴1</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="http://www.daum.net">메뉴2</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="http://www.google.com">메뉴3</Nav.Link>
+        </Nav.Item>
+      </Nav><Img /><Img2 /></>
+    );
+  }
+}  
 
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

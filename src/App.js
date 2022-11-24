@@ -1,7 +1,13 @@
-// import logo from './logo.svg';
-// import roomhaha from './img/room.jpg';
+import logo from './logo.svg';
+// import React from 'react';
 import './App.css';
-import $ from 'jquery';
+import {Fnc1, Fnc2} from './FncCom';
+// import abb from './Test';
+// import {ha} from './Test';
+// import {Abc,DevItem} from './Test';
+// import roomhaha from './img/room.jpg';
+// import $ from 'jquery';
+
 // // 함수형 컴포넌트 App
 // function App() {
 //   let str = "내가 해야할 일";
@@ -117,6 +123,7 @@ import $ from 'jquery';
 //     </div>
 //   );
 // }
+
 // function App(){
 //   let sum = (a,b) => a+b;
 //   function sum1(a,b){
@@ -143,6 +150,7 @@ import $ from 'jquery';
 //     </div>
 //   );
 // }
+
 // function App(){
 //   let a = 1;
 //   let b = 5;
@@ -207,23 +215,93 @@ import $ from 'jquery';
 //     </div>
 //   );
 // }
-$("#pival").text(`2PI = ${Math.PI * Math.PI}`);
+
+// function App(){
+//   $("#pival").text(`2PI = ${Math.PI * Math.PI}`);
+//   return (
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>라이브러리 의존성 관리</div>
+//       </div><br />
+//       <a href="https://www.naver.com">네이버</a><br />
+//       <span id='pival'></span><br /> <br />
+//       1. 리액트앱 폴더로 작업디렉토리 위치 이동<br />
+//       2. npm install jquery 실행하여 라이브러리 설치<br />
+//       3. 설치한 라이브러리를 이용할 때 모듈명으로 가져오기<br />
+//       형식: import 엘리아스명 from '모듈명';<br />
+//       예시: import $ from 'jquery';
+//       import 에는 모듈이나,js만 가능
+//     </div>
+//   );
+// }
+
+// let arr = [1,2,3];
+
+// let res1 = [];
+// arr.map(function(v, i, a){
+//   console.log(`1번째 arr[${i}]번째 아이템값은 : ${v} 현재배열값은 :${a}`);
+//   res1[i] = v+1;
+// });
+// let res2 = [];
+// arr.map((v, i, a) => {
+//   console.log(`2번째 arr[${i}]번재 아이템값은 : ${v+i} 현재배열값은 :${a}`);
+//   res2[i] = v+i;
+// });
+
+// console.log("arr객체 값");
+// console.log(arr);
+
+// console.log("res1객체 값");
+// console.log(res1);
+
+// console.log("res2객체 값");
+// console.log(res2);
+
+// function App(){
+//   return(
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>map() 함수</div>
+//       </div><br />
+//       map함수는 배열 객체를 다루는 함수 입니다.<br />
+//       해당 배열 객체를 분해하여 가져올 수 있습니다.<br />
+//       해당 배열 객체의 요소를 변경하여 새로운 요소로 만들 경우 유용합니다.<br />
+//     </div>
+//   );
+// }
+
+// console.log(abb);
+// function App(){
+//   return(
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>외부파일 참조하기</div>
+//       </div><br />
+//       abb 1: {abb}<br />
+//       abb 2: {Abc}<br />
+//       DevItem : x : {DevItem.x} , y: {DevItem.y}<br />
+//       ha() : {ha()}<br />
+//     </div>
+//   );
+// }
+
 function App(){
   return (
     <div className="App">
       <div className="black-nav">
-        <div>라이브러리 의존성 관리</div>
+        <div>외부파일 참조하기</div>
       </div><br />
-      <a href="https://www.naver.com">네이버</a><br />
-      <span id='pival'></span><br /> <br />
-      1. 리액트앱 폴더로 작업디렉토리 위치 이동<br />
-      2. npm install jquery 실행하여 라이브러리 설치<br />
-      3. 설치한 라이브러리를 이용할 때 모듈명으로 가져오기<br />
-      형식: import 엘리아스명 from '모듈명';<br />
-      예시: import $ from 'jquery';
-      import 에는 모듈이나,js만 가능
+      <SubApp />
+      <Fnc1 />
+      <Fnc2 />
     </div>
   );
 }
+function SubApp(){
+  return(
+    <div>추가한 함수형 컴포넌트</div>
+  );
+}
+
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

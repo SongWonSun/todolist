@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import roomhaha from './img/room.jpg';
 import './App.css';
+import $ from 'jquery';
 // // 함수형 컴포넌트 App
 // function App() {
 //   let str = "내가 해야할 일";
@@ -172,40 +173,57 @@ import './App.css';
 //   );
 // }
 
+// function App(){
+//   let a = [1, 2];
+//   let [i1, i2=7, i3=5] = a; //[1, 2]
+
+//   let [b,c] = [[5, 10], [3, 9]];
+
+//   let obj = {k1: 'one', k2: 'two'};
+//   // let obj = {k1: 'one', k2: 'two', k3: 'hahaha'};
+
+//   let { k1 : nkey, k2, k3 = 'k3값'} = obj; //{nkey: 'one', k2: 'two'}
+
+//   var [it1, ...ods] = [0,1,2]; //it1 = 0 , ...ods = 1,2
+//   var {y1, ...others} = {y1: 'x', x2: 'y', x3: 'z'};
+
+//   return(
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>구조분해할당</div>
+//       </div><br />
+//       i1: {i1}<br />
+//       i2: {i2}<br />
+//       i3: {i3}<br />
+//       [b,c]: {b} {c} <br />
+//       [b,c]: {b[0]} {b[1]} {c[0]} {c[1]}<hr />
+//       obj.k1 , obj.k2: {obj.k1} {obj.k2}<br />
+//       nkey: {nkey}<br />
+//       {/* k1: {k1}<br /> */}
+//       k2: {k2}<br />
+//       k3: {k3}<hr />
+//       it1: {it1} , ods[0]: {ods[0]}, ods[1]: {ods[1]}<br />
+//       y1: {y1}, others.x2: {others.x2}, others.x3: {others.x3}<br />
+//     </div>
+//   );
+// }
+$("#pival").text(`2PI = ${Math.PI * Math.PI}`);
 function App(){
-  let a = [1, 2];
-  let [i1, i2=7, i3=5] = a; //[1, 2]
-
-  let [b,c] = [[5, 10], [3, 9]];
-
-  let obj = {k1: 'one', k2: 'two'};
-  // let obj = {k1: 'one', k2: 'two', k3: 'hahaha'};
-
-  let { k1 : nkey, k2, k3 = 'k3값'} = obj; //{nkey: 'one', k2: 'two'}
-
-  var [it1, ...ods] = [0,1,2]; //it1 = 0 , ...ods = 1,2
-  var {y1, ...others} = {y1: 'x', x2: 'y', x3: 'z'};
-
-  return(
+  return (
     <div className="App">
       <div className="black-nav">
-        <div>구조분해할당</div>
+        <div>라이브러리 의존성 관리</div>
       </div><br />
-      i1: {i1}<br />
-      i2: {i2}<br />
-      i3: {i3}<br />
-      [b,c]: {b} {c} <br />
-      [b,c]: {b[0]} {b[1]} {c[0]} {c[1]}<hr />
-      obj.k1 , obj.k2: {obj.k1} {obj.k2}<br />
-      nkey: {nkey}<br />
-      {/* k1: {k1}<br /> */}
-      k2: {k2}<br />
-      k3: {k3}<hr />
-      it1: {it1} , ods[0]: {ods[0]}, ods[1]: {ods[1]}<br />
-      y1: {y1}, others.x2: {others.x2}, others.x3: {others.x3}<br />
+      <a href="https://www.naver.com">네이버</a><br />
+      <span id='pival'></span><br /> <br />
+      1. 리액트앱 폴더로 작업디렉토리 위치 이동<br />
+      2. npm install jquery 실행하여 라이브러리 설치<br />
+      3. 설치한 라이브러리를 이용할 때 모듈명으로 가져오기<br />
+      형식: import 엘리아스명 from '모듈명';<br />
+      예시: import $ from 'jquery';
+      import 에는 모듈이나,js만 가능
     </div>
   );
 }
-
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

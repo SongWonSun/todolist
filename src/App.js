@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import roomhaha from './img/room.jpg';
 import './App.css';
 
 // 함수형 컴포넌트 App

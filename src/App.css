@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/*  수정한 부분 */
+body{
+  font-family: 'nanumsquare';
+}
+.hStyle{
+  border: 1px solid #454545;
+}
+
+.black-nav{
+  background: #000; width:100%;
+  display: flex; color:#fff;
+  padding: 20px; font-weight: 600; font-size:20px;
+}

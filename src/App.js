@@ -57,14 +57,18 @@ import './App.css';
 //   );
 // }
 
-let arr = [1,2,3];
-let res1 =[];
-arr.map(function(v,i,a){
+let arr = [1,2,3]; // eslint-disable-line no-unused-vars
+let res1 =[]; // eslint-disable-line no-unused-vars
+arr.forEach(function(v,i,a){ 
  console.log(`1번째 arr[${i}]번째 아이템값은 : ${v} 현재배열값 : ${a}`);
  res1[i] = v+1;
 });
 let res2 = [];
-arr.map((v, i, a) => {
+// arr.map((v, i, a) => { 
+//   console.log(`2번째 arr[${i}]번째 아이템값은 : ${v+i} 현재배열값 : ${a}`);
+//   res2[i] = v+i;
+// });
+arr.forEach((v, i, a) => { 
   console.log(`2번째 arr[${i}]번째 아이템값은 : ${v+i} 현재배열값 : ${a}`);
   res2[i] = v+i;
 });

@@ -483,7 +483,7 @@ import Col from 'react-bootstrap/Col';
 
 function App(){
   let str = "좋아요";
-  let [like, likecntModi] =useState([0,0,0,0,0,0]); /*각 좋아요 수를 */ 
+  let [like, likeCntModi] =useState([0,0,0,0,0,0]); /*각 좋아요 수를 */ 
   let arr = [1,2,3,4,5,6];
 
   return(
@@ -507,7 +507,7 @@ function App(){
                 <span id="likeCnt" onClick={() =>{
                   let likeCnt = [...like];
                   likeCnt[i]++;
-                  likecntModi(likeCnt);
+                  likeCntModi(likeCnt);
                   }}>{str}♥{like[i]} 
                 </span>
                 </Col>

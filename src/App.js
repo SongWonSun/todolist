@@ -2,10 +2,16 @@
 // import React from 'react';
 import './App.css';
 // import React, {Component} from 'react';
+// import UserJquery from './UseJquery';
 // import PropsComponent from './PropsComponent';
 // import ChildApp from './ChildApp';
-import $ from 'jquery';
+// import $ from 'jquery';
+import logo from './logo.svg';
+import namu from './img/room.jpg';
 import {useState} from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 // import { Nav } from 'bootstrap-4-react';
 // import {Fnc1, Fnc2} from './FncCom';
 // import abb from './Test';
@@ -350,51 +356,170 @@ import {useState} from "react";
 //   }
 // }
 
+// function App(){
+//   let [a, b] = useState(["아이디를 입력하세요", "비밀번호를 입력하세요"]);
+//   /*
+//     a = ["아이디를 입력하세요", "비밀번호를 입력하세요"];
+//     function b(매개변수-변경할 값){
+//       return 변경한 값;
+//     }
+//   */ 
+//   let [cnt, cntchk] = useState(0);
+//   let st = {color: 'red', fontSize: '20pt', cursor: 'pointer'};
+//   let [htitle, htitlefnc ] = useState(['수난이대', '김약국의 딸들', '태백산맥']);
+//   let [modal, setModal] = useState(0);
+//   // !0 => true !undefined => true
+//   return(
+//     <div className="App">
+//       <h2>onClick이벤트와 State</h2>
+//       <input type='text' id='id' placeholder={a[0]}/>
+//       <input type='text' id='pw' placeholder={a[1]}/>
+//       <button onClick={() =>b([$('#id').val(), $('#pw').val()]) }>클릭</button><br /><br />
+//       {`아이디: ${a[0]} / 비번: ${a[1]}`}<br /> <hr />
+
+//       <span style={st} onClick={() => cntchk(++cnt) }> ♥ 좋아요 {cnt}개 </span> <br /> <br /><hr />
+//       <button onClick={
+//         ()=> {
+//           let copy =[...htitle]; //전개연산자는 요소만 떼어와서 넣어줌 ['수난이대', '김약국의 딸들', '태백산맥']
+//           copy.sort();
+//           htitlefnc(copy);
+//         }}
+//         >클릭</button><br /><hr />
+//         {htitle.join(", ")}
+//         <br /><br />
+//         <button onClick={() => setModal(!modal)}>모달창 제어하기</button>
+//         {
+//           modal == true ? <Modal modal ={htitle.join(", ")} /> : null
+//         }
+//     </div>
+//   );
+// }
+// function Modal(props){
+//   return(
+//     <div className='modal'>
+//       <h3>모달창 띄우기(상세보기)</h3><br /><hr />
+//       {props.modal}
+//     </div>
+//   );
+// }
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div className="App">
+//         <div className="black-nav">
+//           <div>라이브러리 의존성 관리</div>
+//         </div><br />
+//         <UserJquery />
+//       </div>
+//     );
+//   }
+// }
+
+// function App(){
+//   let str = "좋아요";
+//   let [likecnt, likecntModi] =useState(0);
+//   // let arr = [1,2,3,4,5,6];
+
+//   return(
+//     <div className="App">
+//       <div className='divtitle'>
+//         <h2 className='hTitle'>
+//             TodoList
+//           <a href="">메뉴1</a><a href="">메뉴2</a><a href="">메뉴3</a>
+//         </h2>
+//         <div className='imgDiv'><img src={namu}/></div>
+//         <div className='contentDiv'>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo"/><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo" /><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo" /><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//         </div>
+//         <div className='contentDiv'>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo"/><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo" /><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//           <div className='itemDiv'>
+//             <div className='subDiv'>
+//               <img src={logo} className="App-logo" alt="logo" /><br />
+//               <p>리액트 강의</p>
+//               <span id="likeCnt" onClick={() =>{likecntModi(++likecnt)}}>♥ {str} {likecnt}</span>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <div className='divBottom'><h2 className='bTitle'>리액트 연습용 페이지 입니다.</h2></div>
+//     </div>
+//   );
+// }
+
 function App(){
-  let [a, b] = useState(["아이디를 입력하세요", "비밀번호를 입력하세요"]);
-  /*
-    a = ["아이디를 입력하세요", "비밀번호를 입력하세요"];
-    function b(매개변수-변경할 값){
-      return 변경한 값;
-    }
-  */ 
-  let [cnt, cntchk] = useState(0);
-  let st = {color: 'red', fontSize: '20pt', cursor: 'pointer'};
-  let [htitle, htitlefnc ] = useState(['수난이대', '김약국의 딸들', '태백산맥']);
-  let [modal, setModal] = useState(0);
+  let str = "좋아요";
+  let [like, likecntModi] =useState([0,0,0,0,0,0]); /*각 좋아요 수를 */ 
+  let arr = [1,2,3,4,5,6];
+
   return(
     <div className="App">
-      <h2>onClick이벤트와 State</h2>
-      <input type='text' id='id' placeholder={a[0]}/>
-      <input type='text' id='pw' placeholder={a[1]}/>
-      <button onClick={() =>b([$('#id').val(), $('#pw').val()]) }>클릭</button><br /><br />
-      {`아이디: ${a[0]} / 비번: ${a[1]}`}<br /> <hr />
-
-      <span style={st} onClick={() => cntchk(++cnt) }> ♥ 좋아요 {cnt}개 </span> <br /> <br /><hr />
-      <button onClick={
-        ()=> {
-          let copy =[...htitle];
-          copy.sort();
-          htitlefnc(copy);
-        }}
-        >클릭</button><br /><hr />
-        {htitle.join(",")}
-        <br /><br />
-        <button onClick={() => setModal(!modal)}>모달창 제어하기</button>
-        {
-          modal == true ? <Modal modal ={htitle.join(", ")} /> : null
-        }
+      <div className='divtitle'>
+        <h2 className='hTitle'>
+            TodoList
+          <a href="">메뉴1</a><a href="">메뉴2</a><a href="">메뉴3</a>
+        </h2>
+        <div className='imgDiv'>
+          <img className='imgLogo' src={namu}/>
+        </div>
+        <Container>
+        <Row>
+          <div className='contentDiv'>
+            <div className='itemDiv'>
+              {arr.map((el,i) => 
+              <div className='subDiv' key={i} style={{display:'inline-block'}}>
+                <Col md={1} style={{textAlign:'center', marginLeft:'50px'}}>
+                <img src={logo} className="App-logo" alt="logo"/><br />
+                <span id="likeCnt" onClick={() =>{
+                  let likeCnt = [...like];
+                  likeCnt[i]++;
+                  likecntModi(likeCnt);
+                  }}>{str}♥{like[i]} 
+                </span>
+                </Col>
+                </div>
+                )}
+            </div>
+          </div>
+        </Row>
+        </Container>
+      </div>
     </div>
   );
 }
-function Modal(props){
-  return(
-    <div className='modal'>
-      <h3>모달창 띄우기(상세보기)</h3><br /><hr />
-      {props.modal}
-    </div>
-  );
-}
-
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

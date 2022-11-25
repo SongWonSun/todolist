@@ -2,6 +2,8 @@
 // import React from 'react';
 import './App.css';
 import React, {Component} from 'react';
+import PropsComponent from './PropsComponent';
+import ChildApp from './ChildApp';
 import { Nav } from 'bootstrap-4-react';
 // import {Fnc1, Fnc2} from './FncCom';
 // import abb from './Test';
@@ -299,32 +301,52 @@ import {Img,Img2} from './component/body';
 //     </div>
 //   );
 // }
-function SubApp(){
-  return(
-    <div>추가한 함수형 컴포넌트</div>
-  );
-}
+// function SubApp(){
+//   return(
+//     <div>추가한 함수형 컴포넌트</div>
+//   );
+// }
 
 /* 함수형 컴포넌트에서는 리액트에서 지원하는 기능 중 state, lifeCycle등의 기능ㄴ등을 사용할 수없다. 
   state는 react hook를 이용할 경우는 함수형 컴포넌트에서도 state이용이 가능하다. */
 
+// class App extends Component{
+//   render(){
+//     return (
+//       <><Nav style={{background: '#000'}}>
+//         <Nav.Item>
+//           <Nav.Link active href="http://www.naver.com">메뉴1</Nav.Link>
+//         </Nav.Item>
+//         <Nav.Item>
+//           <Nav.Link href="http://www.daum.net">메뉴2</Nav.Link>
+//         </Nav.Item>
+//         <Nav.Item>
+//           <Nav.Link href="http://www.google.com">메뉴3</Nav.Link>
+//         </Nav.Item>
+//       </Nav><Img /><Img2 /></>
+//     );
+//   }
+// }  
+
+//========================2022-11-25======================//
 class App extends Component{
   render(){
-    return (
-      <><Nav style={{background: '#000'}}>
-        <Nav.Item>
-          <Nav.Link active href="http://www.naver.com">메뉴1</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="http://www.daum.net">메뉴2</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="http://www.google.com">메뉴3</Nav.Link>
-        </Nav.Item>
-      </Nav><Img /><Img2 /></>
+    return(
+      <div className="App">
+          <h2>onClick이벤트와 State</h2>
+          <PropsComponent name="프로퍼티 전달하기" /><br /><br />
+          <ChildApp
+            boolVal ={true}
+            numVal ={1}
+            arrVal ={[1,2,3]}
+            obVal = {{k: '값'}}
+            nodeVal = {<h1>노드</h1>}
+          />
+      </div>
     );
   }
-}  
+}
+
 
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

@@ -1,16 +1,17 @@
 
 // import React from 'react';
 import './App.css';
-import React, {Component} from 'react';
-import PropsComponent from './PropsComponent';
-import ChildApp from './ChildApp';
-import { Nav } from 'bootstrap-4-react';
+// import React, {Component} from 'react';
+// import PropsComponent from './PropsComponent';
+// import ChildApp from './ChildApp';
+import $ from 'jquery';
+import {useState} from "react";
+// import { Nav } from 'bootstrap-4-react';
 // import {Fnc1, Fnc2} from './FncCom';
 // import abb from './Test';
 // import {ha} from './Test';
 // import {Abc,DevItem} from './Test';
-import {Img,Img2} from './component/body';
-// import $ from 'jquery';
+// import {Img,Img2} from './component/body'; 
 
 // // 함수형 컴포넌트 App
 // function App() {
@@ -329,24 +330,71 @@ import {Img,Img2} from './component/body';
 // }  
 
 //========================2022-11-25======================//
-class App extends Component{
-  render(){
-    return(
-      <div className="App">
-          <h2>onClick이벤트와 State</h2>
-          <PropsComponent name="프로퍼티 전달하기" /><br /><br />
-          <ChildApp
-            boolVal ={true}
-            numVal ={1}
-            arrVal ={[1,2,3]}
-            obVal = {{k: '값'}}
-            nodeVal = {<h1>노드</h1>}
-          />
-      </div>
-    );
-  }
-}
 
+// class App extends Component{
+  
+//   render(){
+//     return(
+//       <div className="App">
+//           <h2>onClick이벤트와 State</h2>
+//           <PropsComponent test="프로퍼티 전달하기" str="문자열"/><br />
+//           <ChildApp
+//             boolVal ={String(true)}
+//             numVal ={1}
+//             arrVal ={[1,2,3]} 
+//             obVal = {{k: '값'}}
+//             nodeVal = {<h1>노드</h1>}
+//           />
+//       </div>
+//     );
+//   }
+// }
+
+function App(){
+  let [a, b] = useState(["아이디를 입력하세요", "비밀번호를 입력하세요"]);
+  /*
+    a = ["아이디를 입력하세요", "비밀번호를 입력하세요"];
+    function b(매개변수-변경할 값){
+      return 변경한 값;
+    }
+  */ 
+  let [cnt, cntchk] = useState(0);
+  let st = {color: 'red', fontSize: '20pt', cursor: 'pointer'};
+  let [htitle, htitlefnc ] = useState(['수난이대', '김약국의 딸들', '태백산맥']);
+  let [modal, setModal] = useState(0);
+  return(
+    <div className="App">
+      <h2>onClick이벤트와 State</h2>
+      <input type='text' id='id' placeholder={a[0]}/>
+      <input type='text' id='pw' placeholder={a[1]}/>
+      <button onClick={() =>b([$('#id').val(), $('#pw').val()]) }>클릭</button><br /><br />
+      {`아이디: ${a[0]} / 비번: ${a[1]}`}<br /> <hr />
+
+      <span style={st} onClick={() => cntchk(++cnt) }> ♥ 좋아요 {cnt}개 </span> <br /> <br /><hr />
+      <button onClick={
+        ()=> {
+          let copy =[...htitle];
+          copy.sort();
+          htitlefnc(copy);
+        }}
+        >클릭</button><br /><hr />
+        {htitle.join(",")}
+        <br /><br />
+        <button onClick={() => setModal(!modal)}>모달창 제어하기</button>
+        {
+          modal == true ? <Modal modal ={htitle.join(", ")} /> : null
+        }
+    </div>
+  );
+}
+function Modal(props){
+  return(
+    <div className='modal'>
+      <h3>모달창 띄우기(상세보기)</h3><br /><hr />
+      {props.modal}
+    </div>
+  );
+}
 
 //내보내는 역할 export defualt App : => 변수나 함수 를 내보낼수있음
 export default App;

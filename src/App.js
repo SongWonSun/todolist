@@ -1,7 +1,10 @@
 // import logo from './logo.svg';
 // import './App.css';
 import {Component} from 'react';
-import UserJquery from './UserJquery';
+import BooleanComponent from './BooleanComponent';
+// import ProsComponent from './ProsComponent';
+// import MyComponent from './MyComponent';
+
 // function App(){
 //   let a= 1;
 //   let b = 5;
@@ -137,18 +140,49 @@ import UserJquery from './UserJquery';
 //     </div>
 //   );
 // }
+// class App extends Component{
+//   render(){
+//     return(
+      
+//         <div className="App">
+//           <div className="black-nav">
+//             <div>라이브러리 의존성 관리</div>
+//           </div><br />
+//           <UserJquery />
+//         </div>
+//     );
+//   }
+// }
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div className='body'>
+//         <MyComponent name="messsage"/>
+//       </div>
+//     );
+//   }
+// }
+
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div className='body'>
+//         <ProsComponent name="리액트테스트문장"/>
+//       </div>
+//     );
+//   }
+// }
+
 class App extends Component{
   render(){
     return(
-      
-        <div className="App">
-          <div className="black-nav">
-            <div>라이브러리 의존성 관리</div>
-          </div><br />
-          <UserJquery />
-        </div>
+      <div className='body'>
+        <BooleanComponent bored/>
+        <BooleanComponent />
+      </div>
     );
   }
 }
-
 export default App;

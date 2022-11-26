@@ -19,6 +19,7 @@ function UserJquery(){
         let input_val = $('#inputId').val();
         $("#conBox").text(input_val);
         person.sayHello()
+        
         // alert($(this).e);
     }
     return(

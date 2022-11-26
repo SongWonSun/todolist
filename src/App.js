@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
-import './App.css';
-
+// import './App.css';
+import {Component} from 'react';
+import UserJquery from './UserJquery';
 // function App(){
 //   let a= 1;
 //   let b = 5;
@@ -57,36 +58,97 @@ import './App.css';
 //   );
 // }
 
-let arr = [1,2,3]; // eslint-disable-line no-unused-vars
-let res1 =[]; // eslint-disable-line no-unused-vars
-arr.forEach(function(v,i,a){ 
- console.log(`1번째 arr[${i}]번째 아이템값은 : ${v} 현재배열값 : ${a}`);
- res1[i] = v+1;
-});
-let res2 = [];
-// arr.map((v, i, a) => { 
+// let arr = [1,2,3]; // eslint-disable-line no-unused-vars
+// let res1 =[]; // eslint-disable-line no-unused-vars
+// arr.forEach(function(v,i,a){ 
+//  console.log(`1번째 arr[${i}]번째 아이템값은 : ${v} 현재배열값 : ${a}`);
+//  res1[i] = v+1;
+// });
+// let res2 = [];
+// // arr.map((v, i, a) => { 
+// //   console.log(`2번째 arr[${i}]번째 아이템값은 : ${v+i} 현재배열값 : ${a}`);
+// //   res2[i] = v+i;
+// // });
+// arr.forEach((v, i, a) => { 
 //   console.log(`2번째 arr[${i}]번째 아이템값은 : ${v+i} 현재배열값 : ${a}`);
 //   res2[i] = v+i;
 // });
-arr.forEach((v, i, a) => { 
-  console.log(`2번째 arr[${i}]번째 아이템값은 : ${v+i} 현재배열값 : ${a}`);
-  res2[i] = v+i;
-});
-console.log("arr객체 값");
-console.log(arr);
+// console.log("arr객체 값");
+// console.log(arr);
 
-console.log("res1객체 값");
-console.log(res1);
+// console.log("res1객체 값");
+// console.log(res1);
 
-console.log("res2객체 값");
-console.log(res2);
-function App(){
-  return(
-    <div className="App">
-      <div className="black-nav">
-        <div>map() 함수</div>
-      </div><br />
-    </div>
-  );
+// console.log("res2객체 값");
+// console.log(res2);
+
+// function App(){
+//   return(
+//     <div className="App">
+//       <div className="black-nav">
+//         <div>map() 함수</div>
+//       </div><br />
+//     </div>
+//   );
+// }
+
+
+// function App(){
+//   if('0'){
+//     console.log("aa");
+//   }else{
+//     console.log("bb");
+//   }
+  
+//   let [a, b] = useState(["아이디를 입력하세요", "비밀번호를 입력하세요"]);
+
+//   let [cnt, cntchk] = useState(0);
+//   let st = {color: 'red', fontSize: '20pt', cursor: 'pointer'};
+//   let[htitle, htitlefnc] = useState(['수난이대', '김약국의 딸들', '태백산맥']);
+//   let[modal, setModal] = useState(0);
+
+//   return(
+//     <div className="App">
+//       <h2>onClick이벤트와 State</h2>
+//       <input type='text' id='id' placeholder={a[0]}/>
+//       <input type='text' id='pw' placeholder={a[1]}/>
+//       <button onClick={() => b([$('#id').val(), $('#pw').val()]) }>클릭</button><br /><br />
+//       {`아이디: ${a[0]} / 비번: ${a[1]}`}<br /><hr />
+//       <span style={st} onClick={ () => cntchk(++cnt)}>♥ 좋아요 {cnt}개</span><br /><br /><hr />
+//       <button onClick={() =>{
+//         let copy = [...htitle];
+//         copy.sort();
+//         htitlefnc(copy);
+//       }}>클릭</button><br /><hr />
+//       {htitle.join(", ")}
+//       <br /><br />
+//       <button onClick={() => setModal(!modal)}>모달창 제어</button>
+//       {
+//         modal === true ? <Modal modaltest ={htitle.join("/ ")} /> : null
+//       }
+//     </div>
+//   );
+// }
+// function Modal(props){
+//   return(
+//     <div className='modal'>
+//       <h3>모달창 띄우기(상세보기)</h3><br /><hr />
+//       {props.modaltest}
+//     </div>
+//   );
+// }
+class App extends Component{
+  render(){
+    return(
+      
+        <div className="App">
+          <div className="black-nav">
+            <div>라이브러리 의존성 관리</div>
+          </div><br />
+          <UserJquery />
+        </div>
+    );
+  }
 }
+
 export default App;

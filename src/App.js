@@ -1,8 +1,12 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React, {Component} from 'react';
-import Count from './Component/Count';
-import NewCounter from './Component/NewCounter';
+import ScrollSpy from './Component/ScrollSpy';
+// import { ListExample } from './Component/ListExample';
+// import MyComponent2 from './Component/MyComponent2';
+// import MyPureComponent from './Component/MyPureComponent';
+// import Count from './Component/Count';
+// import NewCounter from './Component/NewCounter';
 // import LifecycleExample from './Component/LifecycleExample';
 // import ForceUpdateExample from './Component/ForceUpdateExample';
 // import StateExample from './Component/StateExample';
@@ -275,24 +279,86 @@ import NewCounter from './Component/NewCounter';
 //     );
 //   }
 // }
-class App extends Component{
-  constructor(props){
-    super(props);
-    this.state = {count: 10};
-    this.resetCount = this.resetCount.bind(this);
-  }
-  resetCount(){
-    this.setState( ({count}) => ({ count: count+10}));
-  }
-  render(){
-    return(
-      <div>
-        <div><Count count={this.state.count} /></div>
-        <div><NewCounter count={this.state.count} /></div>
-        <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
-      </div>
-    );
-  }
-}
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {count: 10};
+//     this.resetCount = this.resetCount.bind(this);
+//   }
+//   resetCount(){
+//     this.setState( ({count}) => ({ count: count+10}));
+//   }
+//   render(){
+//     return(
+//       <div>
+//         <div><Count count={this.state.count} /></div>
+//         <div><NewCounter count={this.state.count} /></div>
+//         <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
+//       </div>
+//     );
+//   }
+// }
 
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.listValue =[{name: 'Park'}, {name: 'Lee'}];
+//     this.state = {version:0};
+//     this.handleClick = this.handleClick.bind(this);
+//   }
+//   handleClick(){
+//     setTimeout( () => {
+//       this.listValue[0].name = 'Justin';
+//       this.setState({version:1});
+//     }, 3000);
+//     setTimeout( () => {
+//      this.listValue = [{name: 'Song'}, {name: 'Park'}];
+//      this.setState({version:2}); 
+//     }, 5000);
+//   }
+//   render(){
+//     return(
+//       <div className="body">
+//         <MyComponent2 value={this.listValue} />
+//         <MyPureComponent value={this.listValue} />
+//         <button onClick={this.handleClick}>버튼</button>
+//       </div>
+//     );
+//   }
+// }
+// class App extends Component{
+//     render(){
+//       return(
+//         <div>
+//           <ListExample />
+//         </div>
+//       );
+//     }
+//   }
+
+// function App(){
+//     return(
+//       <>
+//         <input type='radio' name='option1' value='1' label='1개' />
+//         <input type='radio' name='option1' value='2' label='2개' />
+//         <input type='radio' name='option1' value='3' label='3개' />
+//       </>
+//     );
+// }
+
+// function App(){
+  
+//   return [1, 2, 3].map((num) => (
+//     <input type='radio' name='option' key={`${num}`} value={num} label={`${num}개`} />
+//   ));
+// }
+
+
+function App(){
+  return(
+  <>
+    <ScrollSpy />
+  </>
+  );
+}
 export default App;

@@ -1,7 +1,10 @@
 // import logo from './logo.svg';
 // import './App.css';
-import {Component} from 'react';
-import BooleanComponent from './BooleanComponent';
+import React, {Component} from 'react';
+import DefaultPropsComponent from './Component/DefaultPropsComponent';
+// import ChildComponent2 from './Component/ChildComponent2';
+// import ChildComponent3 from './Component/ChildComponent3';
+// import BooleanComponent from './BooleanComponent';
 // import ProsComponent from './ProsComponent';
 // import MyComponent from './MyComponent';
 
@@ -35,6 +38,7 @@ import BooleanComponent from './BooleanComponent';
 //   let [i1, i2=7, i3=5] = a; // eslint-disable-line no-unused-vars
 //   let [b,c] = [[5, 10], [3,9]];
 
+//   console.log(typeof a);
 //   let obj = {k1: 'one', k2: 'two'};
 //   // let obj = {k1: 'one', k2:'two', k3:'hahaha'};
 //   let { k1:nkey, k2, k3='k3값'} = obj;
@@ -46,6 +50,7 @@ import BooleanComponent from './BooleanComponent';
 //        <div className="black-nav">
 //          <div>구조분해할당</div>
 //        </div><br />
+//        a: {a}
 //        i1: {i1}<br />
 //        i2: {i2}<br />
 //        i3: {i3}<br />
@@ -175,14 +180,52 @@ import BooleanComponent from './BooleanComponent';
 //   }
 // }
 
+// class App extends Component{
+//   render(){
+//     return(
+//       <div className='body'>
+//         <BooleanComponent bored/>
+//         <BooleanComponent />
+//       </div>
+//     );
+//   }
+// }
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <ChildComponent2
+//           objValue={{name:'송원선',age: 20}}
+//         />
+//       </div>
+//     );
+//   }
+// }
+
+// const test = {age:20};
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <ChildComponent3
+//           objValue={test}
+//           requiredStringValue="필수"
+//         />
+//       </div>
+//     );
+//   }
+// }
+
 class App extends Component{
-  render(){
-    return(
-      <div className='body'>
-        <BooleanComponent bored/>
-        <BooleanComponent />
-      </div>
-    );
-  }
+    render(){
+      return(
+        <div>
+          <DefaultPropsComponent />
+        </div>
+      );
+    }
 }
+
+
 export default App;

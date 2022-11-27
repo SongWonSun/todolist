@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React, {Component} from 'react';
-import DefaultPropsComponent from './Component/DefaultPropsComponent';
+import ChildProperty from './Component/ChildProperty';
+// import DefaultPropsComponent from './Component/DefaultPropsComponent';
 // import ChildComponent2 from './Component/ChildComponent2';
 // import ChildComponent3 from './Component/ChildComponent3';
 // import BooleanComponent from './BooleanComponent';
@@ -217,14 +218,27 @@ import DefaultPropsComponent from './Component/DefaultPropsComponent';
 //   }
 // }
 
+// class App extends Component{
+//     render(){
+//       return(
+//         <div>
+//           <DefaultPropsComponent />
+//         </div>
+//       );
+//     }
+// }
+
 class App extends Component{
-    render(){
-      return(
-        <div>
-          <DefaultPropsComponent />
-        </div>
-      );
-    }
+  render(){
+    return(
+      <div>
+        {/* <ChildProperty>
+          <div><span>자식노드</span></div>
+        </ChildProperty> */}
+        <ChildProperty children={<div><span>자식노드</span></div>}/>
+      </div>
+    );
+  }
 }
 
 

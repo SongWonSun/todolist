@@ -1,7 +1,12 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React, {Component} from 'react';
-import ChildProperty from './Component/ChildProperty';
+import Count from './Component/Count';
+import NewCounter from './Component/NewCounter';
+// import LifecycleExample from './Component/LifecycleExample';
+// import ForceUpdateExample from './Component/ForceUpdateExample';
+// import StateExample from './Component/StateExample';
+// import ChildProperty from './Component/ChildProperty';
 // import DefaultPropsComponent from './Component/DefaultPropsComponent';
 // import ChildComponent2 from './Component/ChildComponent2';
 // import ChildComponent3 from './Component/ChildComponent3';
@@ -228,18 +233,66 @@ import ChildProperty from './Component/ChildProperty';
 //     }
 // }
 
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         {/* <ChildProperty>
+//           <div><span>자식노드</span></div>
+//         </ChildProperty> */}
+//         <ChildProperty children={<div><span>자식노드</span></div>}/>
+//       </div>
+//     );
+//   }
+// }
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <StateExample />
+//       </div>
+//     );
+//   }
+// }
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         {/* <ForceUpdateExample /> */}
+//         <Count />
+//       </div>
+//     );
+//   }
+// }
+
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <LifecycleExample />
+//       </div>
+//     );
+//   }
+// }
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {count: 10};
+    this.resetCount = this.resetCount.bind(this);
+  }
+  resetCount(){
+    this.setState( ({count}) => ({ count: count+10}));
+  }
   render(){
     return(
       <div>
-        {/* <ChildProperty>
-          <div><span>자식노드</span></div>
-        </ChildProperty> */}
-        <ChildProperty children={<div><span>자식노드</span></div>}/>
+        <div><Count count={this.state.count} /></div>
+        <div><NewCounter count={this.state.count} /></div>
+        <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
       </div>
     );
   }
 }
-
 
 export default App;

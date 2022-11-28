@@ -1,18 +1,14 @@
-
 // import React from 'react';
 import './App.css';
-// import React, {Component} from 'react';
+import React, {useState} from 'react';
+import {Button, Collapse, Card} from 'react-bootstrap';
 // import UserJquery from './UseJquery';
 // import PropsComponent from './PropsComponent';
 // import ChildApp from './ChildApp';
 // import $ from 'jquery';
-import logo from './logo.svg';
-import namu from './img/room.jpg';
-import {useState} from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-// import { Nav } from 'bootstrap-4-react';
+// import logo from './logo.svg';
+// import namu from './img/room.jpg';
+// import {useState} from "react";
 // import {Fnc1, Fnc2} from './FncCom';
 // import abb from './Test';
 // import {ha} from './Test';
@@ -481,42 +477,128 @@ import Col from 'react-bootstrap/Col';
 //   );
 // }
 
+// function App(){
+//   let str = "좋아요";
+//   let [like, likeCntModi] =useState([0,0,0,0,0,0]); /*각 좋아요 수를 이미지에 할당함 */ 
+//   let arr = [1,2,3,4,5,6];
+
+//   return(
+//     <div className="App">
+//       <div className='divtitle'>
+//         <h2 className='hTitle'>
+//             TodoList
+//           <a href="">메뉴1</a><a href="">메뉴2</a><a href="">메뉴3</a>
+//         </h2>
+//         <div className='imgDiv'>
+//           <img className='imgLogo' src={namu}/>
+//         </div>
+//         <Container>
+//         <Row>
+//           <div className='contentDiv'>
+//             <div className='itemDiv'>
+//               {arr.map((el,i,arr) =>
+//               <div className='subDiv' key={i} style={{display:'inline-block'}}>
+//                 <Col md={1} style={{textAlign:'center', marginLeft:'50px'}}>
+//                 <img src={logo} className="App-logo" alt="logo"/><br />
+//                 <span id="likeCnt" onClick={() => {
+//                   let likeCnt = [0,0,0,0,0,0];
+//                   likeCnt[i]++;
+//                   likeCntModi(likeCnt);
+//                   }}>{str}♥{like[i]} 
+//                 </span>
+//                 </Col>
+//                 </div>
+//                 )}
+//             </div>
+//           </div>
+//         </Row>
+//         </Container>
+//       </div>
+//     </div>
+//   );
+// }
+
+//===========2022-11-28==============//
+// function App(){
+//   return(
+//     <div className='App'>
+//       <div className='divTitle'>
+//         <h2 className='hTitle'>TodoList</h2>
+//       </div>
+//       <div className='mPa'>
+//         <Modal /><hr />
+//         <Modal2 name='마이콜' age={28} />
+//       </div>
+//       <div className='divBottom'><h2 className='bTitle'>리액트 연습용 페이지 입니다.</h2></div>
+//     </div>
+//   );
+// }
+
+/*
+ 클래스형 컴포넌트는 반드시 constructor(), render(){}함수필요
+ 생성자에는 반드시 super()기술,
+ render(){} 함수에는 반드시 return()함수 기술 필요
+ {} => 단 한개만 넣을 수 있는 공간(변수나, 함수넣을수있는 공간)
+*/ 
+// class Modal extends React.Component{
+//   constructor(){
+//     super();
+//     //state는 생성자안에서 기술해줘야함
+//     this.state ={
+//       name: "홍길동",
+//       age: 20
+//     }
+//   }
+//     render(){
+//       return(
+//         <div className='contentDiv'>
+//           <div> 안녕하세요, {this.state.name}님,</div>
+//           <div>{this.state.name}님의 나이는 {this.state.age}세 입니다.</div>
+//           <button onClick={() => {this.setState({age: this.state.age+1}); }}>나이 변경</button>
+//         </div>
+//       );
+//     }
+// }
+// class Modal2 extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state ={age: props.age}
+//   }
+//     render(){
+//       return(
+//         <div className='contentDiv'>
+//           <div> 안녕하세요, {this.props.name}님,</div>
+//           <div>{this.props.name}님의 나이는 {this.state.age}세 입니다.</div>
+//           <button onClick={() => {this.setState({age: this.state.age+1}); }}>나이 변경</button>
+//         </div>
+//       );
+//     }
+// }
+
 function App(){
-  let str = "좋아요";
-  let [like, likeCntModi] =useState([0,0,0,0,0,0]); /*각 좋아요 수를 이미지에 할당함 */ 
-  let arr = [1,2,3,4,5,6];
+  const [open, setOpen] = useState(false);
 
   return(
-    <div className="App">
-      <div className='divtitle'>
-        <h2 className='hTitle'>
-            TodoList
-          <a href="">메뉴1</a><a href="">메뉴2</a><a href="">메뉴3</a>
-        </h2>
-        <div className='imgDiv'>
-          <img className='imgLogo' src={namu}/>
-        </div>
-        <Container>
-        <Row>
-          <div className='contentDiv'>
-            <div className='itemDiv'>
-              {arr.map((el,i,arr) =>
-              <div className='subDiv' key={i} style={{display:'inline-block'}}>
-                <Col md={1} style={{textAlign:'center', marginLeft:'50px'}}>
-                <img src={logo} className="App-logo" alt="logo"/><br />
-                <span id="likeCnt" onClick={() => {
-                  let likeCnt = [0,0,0,0,0,0];
-                  likeCnt[i]++;
-                  likeCntModi(likeCnt);
-                  }}>{str}♥{like[i]} 
-                </span>
-                </Col>
-                </div>
-                )}
-            </div>
+    <div className='App'>
+      <Button
+        onClick={()=> setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open} 
+      > click </Button>
+      <div style={{minHeight: '150px'}}>
+        <Collapse in={open} dimension='width'>
+          <div id="example-collapse-text">
+          <Card body style={{width:'400px'}}>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+            aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc
+          </Card>
           </div>
-        </Row>
-        </Container>
+        </Collapse>
       </div>
     </div>
   );

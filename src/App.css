@@ -1,34 +1,21 @@
 .App {
   /* text-align: center; */
   font-family: monospace;
-  color:#444;
+  color:#444444; 
 }
 
 .App-logo {
-  /* height: 40vmin;
-  pointer-events: none; */
   width:100%;
   height: 40vmin;
-  /* pointer-events: none;
+  pointer-events: none;
   border-radius: 8px;
-  border: 1px solid #555; */
+  border: 1px solid #555;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    /* animation: App-logo-spin infinite 20s linear; */
+    animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -43,47 +30,17 @@
     transform: rotate(360deg);
   }
 }
+
+
 /*수정 시작*/
-.App .likeCnt {color: #f00; font-size: 20pt;cursor:pointer;}
-.App div.divtitle{
-  position: sticky;top:0;left:0;z-index: 999;background-color: #fff;
-  border-bottom: 1px solid #454545;margin-top: 30px; padding-bottom:10px;
-}
-.App .hTitle{padding:10px 10px; width:1200px; max-width:100%; margin:0 auto;}
-.App .hTitle a{text-decoration: none; padding: 10px 30px; color:#444;}
-.App .hTitle a:hover{text-decoration: none; color:#f00;}
-.App .hTitle a:visited{text-decoration: none;}
-.App .imgDiv img{min-width: 100vw;}
-/* .App  div.contentDiv{
-  display: flex;justify-content: space-around;
-  width:1200px;max-width: 100%;margin: 30px auto;
-}
-
-.App div.itemDiv{text-align: center; width: 30%;max-width: 100%;}
-.App div.itemDiv img{width:100%;max-width: 100%;height:90vh;}
-.App div.divBottom{
-  margin-top: 50px; margin-bottom: 50px; text-align: center;
-  padding-top:30px;border-top:1px solid #454546;
-} */
-
-
-
-
-
-
-
-
-/*  수정한 부분 */
-/* body{
-  font-family: 'nanumsquare';
-}
-.hStyle{
-  border: 1px solid #454545;
-}
-
-.black-nav{
-  background: #000; width:100%;
-  display: flex; color:#fff;
-  padding: 20px; font-weight: 600; font-size:20px;
-} */
-
+.App div.divTitle {
+  position:sticky;top:0;left:0;z-index: 999;background-color: #fff; 
+  border-bottom: 1px solid #454545;margin-top:30px;padding-bottom: 10px;
+ }
+.App .hTitle {padding: 10px 10px;width:1200px;max-width: 100%; margin: 0 auto;}
+.App .hTitle a {text-decoration: none; padding: 10px 30px; color: #444;}
+.App .hTitle a:hover {text-decoration: none; color:#ff0000}
+.App .hTitle a:visited {text-decoration: none;}
+.App div.mPa {width:800px; max-width: 100%;margin: 30px auto;}
+.App div.contentDiv { width:100%;font-size: 16pt; margin-top:30px; margin-bottom:30px;}
+.App .divBottom {border-top: 1px solid #454545; text-align: center;}
